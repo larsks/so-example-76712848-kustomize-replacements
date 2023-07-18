@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: example
+          image: docker.io/alpine:latest
+          command:
+            - sleep
+            - inf
+          env:
+            - name: USER_NAME
+              value: update-via-replacement
+            - name: USER_PASSWORD
+              value: update-via-replacement
